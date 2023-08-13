@@ -1,0 +1,33 @@
+공통 학습: 데이콘 2023 전력 소비량 예측 대회
+           1차 모델링 
+          
+           임재환 & 최웅환: XGBoost     (시계열 예측에 강하다는 장점)
+
+           박종일 & 강승호: randomforest (건물 별 모델링을 하기 때문에 파라미터 튜닝 & 시간 단축에 장점)
+
+class TimeSeriesDataset(Dataset):
+    def __init__(self, df, window_size):
+        self.df = df
+        self.window_size = window_size
+
+    def __len__(self):
+        return len(self.df) - self.window_size
+
+    def __getitem__(self, idx):
+        x = torch.tensor(self.df[idx:idx+self.window_size, :], dtype=torch.float)
+        if self.df.shape[1] > 1:
+            y = torch.tensor(self.df[idx+self.window_size, -1], dtype=torch.float)
+        else:
+            y = None
+        return x, y
+
+def create_data_loader(df, window_size, batch_size):
+    dataset = TimeSeriesDataset(df, window_size)
+    data_loader = DataLoader(dataset, batch_size=batch_size, shuffle=False)
+    return data_loader
+     
+개인별 학습 
+          -임재환: 
+          -박종일: 
+          -최웅환: https://github.com/dnstjr4567/mo2023-1/tree/main
+          -강승호: https://velog.io/@win_ho15/%EB%B0%B1%EC%A4%80-1463
