@@ -1,0 +1,74 @@
+-공통학습
+        임재환, 박종일: SQLD 자격증을 대비하여 SQLD 기본 문법과 실습을 병행
+        강승호, 최웅환: CJ 대한통운 알고리즘 대회 참여, 동적계획법과 크루스칼 알고리즘을 심화 학습하였다.
+
+학습한 SQLD 내용: 
+DML(Data Manipulation Language)
+insert, update, delete, select, DDL(Data Definition Language)
+create, alter, drop, truncate, rename
+DCL(Data Control Language), grant, revoke, TCL(Transaction Control Language)
+commit, rollback, savepoint, Create
+
+테이블 생성
+create table student (
+칼럼명 타입 조건(not null 등),
+칼럼명 타입 조건(not null 등),
+칼럼명 타입 조건(not null 등),
+PRIMARY KEY ~~ );
+
+insert into student values(테이블에 맞는 데이터 양식);
+
+데이터 내용 수정
+update 테이블 set 칼럼 = '값' where 조건;
+Delete
+데이터 삭제
+delete from 테이블 where 조건;
+select
+모든 컬럼 조회
+select * from student;
+
+필요한 컬럼 조회
+select age, name from student;
+
+select 문법 순서
+select
+from
+where
+group by
+having
+order by
+*쿼리의 실행 순서는 from ▶ where ▶ group by ▶having ▶ select ▶ order by
+
+Where
+컬럼 조회의 조건
+select * from student where id = 1;
+
+and, or 조건
+select * from student where sex='남자' and(or) address='서울';
+
+like 조건
+% 로 표현
+select * from student where name = '김%';
+
+Limit
+조회 결과 행의 수 제한
+select * from student limit 1;
+Group By
+특정 칼럼 기준의 데이터 그룹핑
+select age from student group by age;
+Order by
+특정 칼럼 기준으로 정렬
+ASC : 오름차순 1 2 3 4 5
+DESC : 내림차순 5 4 3 2 1
+select * from student order by age desc;
+Distinct
+중복 행을 제거
+select distinct name from student;
+Alias
+칼럼에 별칭을 주고 조회
+select age '나이' from student where id = 3;
+
+을 공부하였습니다.
+
+
+          
