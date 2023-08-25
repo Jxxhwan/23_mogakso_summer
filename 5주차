@@ -1,0 +1,24 @@
+공통 학습: 데이콘 2023 전력 소비량 예측 대회
+           XGboost / RandomForest 모델링 / 리뷰
+          
+           Xgboost는 10점, Random Forest는 7점대가 나왔다.
+           이후 파인튜닝을 위해 Seed를 5개로 나누고, 각각의 점수에 대해서 분석을 해보았다. 
+
+      for seed in [0,1,2,3,4,5]: # 각 시드별 예측
+        y = train.loc[train.num == i+1, 'power']
+        x = train.loc[train.num == i+1, ].iloc[:, 5:]
+        y_train, y_test, x_train, x_test = temporal_train_test_split(y = y, X = x, test_size = 168)
+
+        if xgb_params.iloc[i,6] != 0:  # 만약 alpha가 0이 아니면 weighted_mse 사용
+            xgb.set_params(**{'objective':weighted_mse(xgb_params.iloc[i,6])})
+
+
+       또한, 기존 SMAPE과 시드 별 SMAPE 중 오차가 더 낮은 값의 파라미터를 선택하여 오차를 최소화 하는 방안을 생각했다.
+        if score1 < score0:
+            best_alpha = j
+            score0 = score1
+
+          -임재환: https://woghkszhf.tistory.com/
+          -박종일: 
+          -최웅환: https://github.com/dnstjr4567/mo2023-1/tree/main
+          -강승호: https://velog.io/@win_ho15/%EB%B0%B1%EC%A4%80-1463
