@@ -27,7 +27,7 @@ def create_data_loader(df, window_size, batch_size):
     return data_loader
      
 개인별 학습 
-          -임재환: 
+          -임재환: https://woghkszhf.tistory.com/73   (비번 : 45NDAzMj )
           -박종일: 
           -최웅환: https://github.com/dnstjr4567/mo2023-1/tree/main
           -강승호: https://velog.io/@win_ho15/%EB%B0%B1%EC%A4%80-1463
