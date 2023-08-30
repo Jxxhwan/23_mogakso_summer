@@ -30,4 +30,4 @@ def create_data_loader(df, window_size, batch_size):
           -임재환: https://woghkszhf.tistory.com/73   (비번 : 45NDAzMj )
           -박종일: https://velog.io/@aosdbfc/2023-%ED%95%98%EA%B3%84%EB%AA%A8%EA%B0%81%EC%86%8C-4%EC%A3%BC%EC%B0%A8-%EA%B8%B0%EB%A1%9D
           -최웅환: https://github.com/dnstjr4567/mo2023-1/tree/main
-          -강승호: https://velog.io/@win_ho15/%EB%B0%B1%EC%A4%80-1463
+          -강승호: https://velog.io/@win_ho15/%EB%B0%B1%EC%A4%80-11053
